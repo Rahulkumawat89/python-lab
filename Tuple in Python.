@@ -1,39 +1,115 @@
-2) Write a program to demonstrate Tuple in Python.
+In [2]:
+## tuples 
 
-# Different types of tuples
+Tuple1 = (1,2,3,4,5)
+Tuple1
+Out[2]:
+(1, 2, 3, 4, 5)
+In [2]:
+## different types of tuples 
 
-# Empty tuple
-my_tuple = ()
-print(my_tuple)
+Boolean = (True, True,False,True)
+IntTuple = (1,23,4,5,6)
+FloatTuple = (1.3,1.3,1.5,1.9,5.6)
+StringTuple = ("a","b","c","d","e")
 
-# Tuple having integers
-my_tuple = (1, 2, 3)
-print(my_tuple)
+print(Boolean)
+print(IntTuple)
+print(FloatTuple)
+print(StringTuple)
+(True, True, False, True)
+(1, 23, 4, 5, 6)
+(1.3, 1.3, 1.5, 1.9, 5.6)
+('a', 'b', 'c', 'd', 'e')
+In [1]:
+### converting list into tuple
 
-# tuple with mixed datatypes
-my_tuple = (1, "Hello", 3.4)
-print(my_tuple)
+l = [1,2,3,4,5]
 
-# nested tuple
-my_tuple = ("mouse", [8, 4, 6], (1, 2, 3))
-print(my_tuple)
-Output:-
-()
-(1, 2, 3)
-(1, 'Hello', 3.4)
-('mouse', [8, 4, 6], (1, 2, 3))
+tu = tuple(l)
+print(type(tu), tu)
+<class 'tuple'> (1, 2, 3, 4, 5)
+In [4]:
+## concatenation of tuples 
 
-my_tuple = ("hello")
-print(type(my_tuple))  # <class 'str'>
+ConTup = tu + StringTuple
 
-# Creating a tuple having one element
-my_tuple = ("hello",)
-print(type(my_tuple))  # <class 'tuple'>
+print(ConTup)
+(1, 2, 3, 4, 5, 'a', 'b', 'c', 'd', 'e')
+In [5]:
+## nesting of tuples 
 
-# Parentheses is optional
-my_tuple = "hello",
-print(type(my_tuple))  # <class 'tuple'>
-Output:-
-<class 'str'>
-<class 'tuple'>
-<class 'tuple'>
+tuple1 = (1,2,3,4,5)
+tuple2 = ("Sudhanwa","Kaveeshwar","57")
+
+tuple3 = (tuple1, tuple2)
+
+print(tuple3)
+((1, 2, 3, 4, 5), ('Sudhanwa', 'Kaveeshwar', '57'))
+In [6]:
+#### tuples are immutable 
+
+tuple4 = (1,2,3)
+tuple4[3] = 4
+
+# TypeError                                 Traceback (most recent call last)
+# ~\AppData\Local\Temp/ipykernel_11484/231124426.py in <module>
+#       2 
+#       3 tuple4 = (1,2,3)
+# ----> 4 tuple4[3] = 4
+
+# TypeError: 'tuple' object does not support item assignment
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+~\AppData\Local\Temp/ipykernel_11484/231124426.py in <module>
+      2 
+      3 tuple4 = (1,2,3)
+----> 4 tuple4[3] = 4
+
+TypeError: 'tuple' object does not support item assignment
+In [7]:
+### Tuples Slicing
+tuple5 = (0,1,2,3,4,5,6,7,8,9)
+
+print(tuple5[1:])
+print(tuple5[::-1])
+print(tuple5[1:10:2])
+
+### length function 
+
+print(len(tuple5))
+(1, 2, 3, 4, 5, 6, 7, 8, 9)
+(9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
+(1, 3, 5, 7, 9)
+10
+In [ ]:
+### deleting a tuple
+
+tuple6 = (1,23,4,5,6,7)
+
+print(tuple6)
+del tuple6
+print(tuple6)
+
+# ---------------------------------------------------------------------------
+# NameError                                 Traceback (most recent call last)
+# ~\AppData\Local\Temp/ipykernel_16404/2135612122.py in <module>
+#       5 print(tuple6)
+#       6 del tuple6
+# ----> 7 print(tuple6)
+
+# NameError: name 'tuple6' is not defined
+In [4]:
+### Functions on tuples 
+
+tuple7 = (1,2,4,56,7,89,0,99,8)
+maximum = max(tuple7)
+minimum = min(tuple7)
+
+print("Max: ", maximum)
+print("Min: ",minimum)
+
+print("Len: ", len(tuple7))
+Max:  99
+Min:  0
+Len:  9 

@@ -1,0 +1,110 @@
+Write at least 10 program to demonstrate usage of  classes and Objects in Python( Stack , Queue , dequeue implementation already demonstrated in lab
+# stack using list 
+
+stack = ["Amar", "Akbar", "Anthony"] 
+
+stack.append("Ram") 
+
+stack.append("Iqbal") 
+
+print(stack) 
+
+  
+# Removes the last item 
+
+print(stack.pop()) 
+
+  
+
+print(stack) 
+
+  
+# Removes the last item 
+
+print(stack.pop()) 
+
+  
+
+print(stack) 
+
+//output:-
+
+['Amar', 'Akbar', 'Anthony', 'Ram', 'Iqbal']
+Iqbal
+['Amar', 'Akbar', 'Anthony', 'Ram']
+Ram
+['Amar', 'Akbar', 'Anthony']
+
+
+ 
+# Queue using list 
+
+queue = ["Amar", "Akbar", "Anthony"] 
+
+queue.append("Ram") 
+
+queue.append("Iqbal") 
+
+print(queue) 
+
+  
+# Removes the first item 
+
+print(queue.pop(0)) 
+
+  
+
+print(queue) 
+
+  
+# Removes the first item 
+
+print(queue.pop(0)) 
+
+  
+
+print(queue) 
+
+Output:-
+
+['Amar', 'Akbar', 'Anthony', 'Ram', 'Iqbal']
+Amar
+['Akbar', 'Anthony', 'Ram', 'Iqbal']
+Akbar
+['Anthony', 'Ram', 'Iqbal']
+
+
+# Stack using deque 
+
+from collections import deque 
+
+queue = deque(["Ram", "Tarun", "Asif", "John"]) 
+
+print(queue) 
+
+queue.append("Akbar") 
+
+print(queue) 
+
+queue.append("Birbal") 
+
+print(queue) 
+
+print(queue.pop())                  
+
+print(queue.pop())                  
+
+print(queue) 
+
+
+Output:
+
+deque(['Ram', 'Tarun', 'Asif', 'John'])
+deque(['Ram', 'Tarun', 'Asif', 'John', 'Akbar'])
+deque(['Ram', 'Tarun', 'Asif', 'John', 'Akbar', 'Birbal'])
+Birbal
+Akbar
+deque(['Ram', 'Tarun', 'Asif', 'John'])
+
+
+

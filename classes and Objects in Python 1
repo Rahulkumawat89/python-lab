@@ -1,110 +1,74 @@
-Write at least 10 program to demonstrate usage of  classes and Objects in Python( Stack , Queue , dequeue implementation already demonstrated in lab
-# stack using list 
+class MyClass:
+  x = 8
+p1 = MyClass()
+print(p1.x)
+# Queue
+class Queue:
+  def __init__(self):
+    self.queue = list()
+  def addtoq(self, dataval):
+   if dataval not in self.queue:
+    self.queue.insert(0, dataval)
+    return True
+    return False
 
-stack = ["Amar", "Akbar", "Anthony"] 
-
-stack.append("Ram") 
-
-stack.append("Iqbal") 
-
-print(stack) 
-
-  
-# Removes the last item 
-
-print(stack.pop()) 
-
-  
-
-print(stack) 
-
-  
-# Removes the last item 
-
-print(stack.pop()) 
-
-  
-
-print(stack) 
-
-//output:-
-
-['Amar', 'Akbar', 'Anthony', 'Ram', 'Iqbal']
-Iqbal
-['Amar', 'Akbar', 'Anthony', 'Ram']
-Ram
-['Amar', 'Akbar', 'Anthony']
+  def size(self):
+    return len(self.queue)
 
 
- 
-# Queue using list 
-
-queue = ["Amar", "Akbar", "Anthony"] 
-
-queue.append("Ram") 
-
-queue.append("Iqbal") 
-
-print(queue) 
-
-  
-# Removes the first item 
-
-print(queue.pop(0)) 
-
-  
-
-print(queue) 
-
-  
-# Removes the first item 
-
-print(queue.pop(0)) 
-
-  
-
-print(queue) 
-
-Output:-
-
-['Amar', 'Akbar', 'Anthony', 'Ram', 'Iqbal']
-Amar
-['Akbar', 'Anthony', 'Ram', 'Iqbal']
-Akbar
-['Anthony', 'Ram', 'Iqbal']
+TheQueue = Queue()
+TheQueue.addtoq("Mon")
+TheQueue.addtoq("Tue")
+TheQueue.addtoq("Wed")
+print(TheQueue.size())
 
 
-# Stack using deque 
-
-from collections import deque 
-
-queue = deque(["Ram", "Tarun", "Asif", "John"]) 
-
-print(queue) 
-
-queue.append("Akbar") 
-
-print(queue) 
-
-queue.append("Birbal") 
-
-print(queue) 
-
-print(queue.pop())                  
-
-print(queue.pop())                  
-
-print(queue) 
+class ap:
+  pass
 
 
-Output:
+class person:
+  age = 10
 
-deque(['Ram', 'Tarun', 'Asif', 'John'])
-deque(['Ram', 'Tarun', 'Asif', 'John', 'Akbar'])
-deque(['Ram', 'Tarun', 'Asif', 'John', 'Akbar', 'Birbal'])
-Birbal
-Akbar
-deque(['Ram', 'Tarun', 'Asif', 'John'])
+  def greet(self):
+    print("hello")
 
 
+obj = person()
+print(obj.age)
+obj.greet()
 
+
+class MG:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+  def show(self):
+    print("name =" + self.name)
+    print("age =", self.age)
+
+
+obj1 = MG("kumawat", 20)
+obj1.show()
+
+#stack
+class Stack:
+  def __init__(self):
+    self.stack = []
+  def add(self, dataval):
+    if dataval not in self.stack:
+      self.stack.append(dataval)
+      return True
+    else:
+      return False
+  def peek(self):
+    return self.stack[-1]
+AStack = Stack()
+AStack.add("Mon")
+AStack.add("Tue")
+AStack.peek()
+print(AStack.peek())
+AStack.add("Wed")
+AStack.add("Thu")
+print(AStack.peek())

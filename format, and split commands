@@ -1,0 +1,18 @@
+5) Write a program to demonstrate input output commands, use of     format, and split commands.
+//input or output command  use of split.
+•	x = ‘red,orange,yellow’ 
+            x.split(“,”) 
+     [‘red’, ‘orange’, ‘yellow’]   //output
+•	str = “Python is cool” 
+print(str.split()) 
+[‘Python’, ‘is’, ‘cool’].  //Output
+•	str = “abcabc” 
+print(str.split(c)) 
+[‘ab’, ‘abc’]   //Output
+•	f = open(“sample.txt”, “r”) 
+info = f.read() 
+print(info.splitlines()) 
+f.close() 
+[‘Hi there’, ‘You are learning Python’]   //Output
+//input or output command  use of format.
+

@@ -1,53 +1,227 @@
-4) Write at least 10-15  problem codes   to demonstrate usage of Lambda functions in Python (with use of map, filter , reduce etc.)
-sum = lambda x, y : x + y
-sum(3,4)
-output:-
-7
-//lambda with use of map.
-1.	a = [1, 2, 3, 4]
-      b = [17, 12, 11, 10]
-      c = [-1, -4, 5, 9] 
-          list(map(lambda x, y, z : x+y+z, a, b, c))
-Output:
-[17, 10, 19, 23]
-2.	list(map(lambda x, y : x+y, a, b))
-Output:
-[18, 14, 14, 14]
+In [ ]:
+# for autosaving jupyter notebook 
+# these thing is giving problem check this!!
+%autosave 60
+In [ ]:
+## Lambda function 
 
-3.	list(map(lambda x, y, z : 2.5*x + 2*y - z, a, b, c))
-Output:
-[37.5, 33.0, 24.5, 21.0]
-//lambda with use of filter.
-1.	Fibonacci = [0,1,1,2,3,5,8,13,21,34,55]
-     Odd_numbers = list(filter(lambda x: x % 2, fibonacci))
-     Print(odd_numbers)
-Output:-
-[1, 1, 3, 5, 13, 21, 55]
-2.even_numbers = list(filter(lambda x: x % 2 == 0, fibonacci))
- print(even_numbers)
+(lambda x,y:x+y)(5,6)
+In [ ]:
+### Normal function 
 
-output:-
-[0, 2, 8, 34]
-3.even_numbers = list(filter(lambda x: x % 2 -1, fibonacci))
- print(even_numbers)
+def fun(x,y):
+    return x+y
 
-output:-
-[0, 2, 8,34]
+print(fun(5,6))
+In [ ]:
+## using filter function with lambda
+
+list1 = [1,2,3,4,5,6,7,8,9]
+
+result = list(filter(lambda x:x%2 == 0, list1))
+print(result)
+In [ ]:
+### using map function with lambda 
+
+power = list(map(lambda x:pow(x,2),[1,2,3,4,5]))
+print(power)
+
+add = list(map(lambda x,y:x+y,[1,2,3,4,5],[10,20,30,40,50]))
+print(add)
+In [ ]:
+StrList = ["rahul", "Kumawat"]
+
+ans = list(map(list, StrList))
+print(ans)
+In [ ]:
+fun= lambda x: x**x
+
+print(fun(10))
+In [ ]:
+double = [lambda x=x: x*x for x in range(1,11)]
+
+for i in double:
+    print(i())
+In [ ]:
+## different parameters
+
+def Parameters(First,Second,Third):
+    print("First parameter: ",First,type(First))
+    print("Second parameter: ", Second, type(Second))
+    print("Third parameter: ", Third, type(Third))
+    
+Parameters(11,11.1,"rahul kumawat" )
+In [ ]:
+### default parameter
+
+def DefaultParam(First, Second = 100):
+    print("First: ", First)
+    print("Second: ", Second )
+    
+    
+DefaultParam(12)
+In [ ]:
+### Keyword args
+
+def KeywordArg(Name, Last):
+    print(Name+" "+Last)
+    
+    
+KeywordArg(Name="rahul",Last = "Kumawat")
+KeywordArg(Last="Kumawat",Name="rahul")
+In [ ]:
+### variable length args
+
+def VariLen(*args):
+    for arg in args:
+        print(arg, end=" ")
+    
+VariLen("rahul", "Kumawat", 48, "CI")
+In [ ]:
+### variable length keyword Args
+
+def KeyVari(**kargs):
+    for key, val in kargs.items():
+        print("%s -> %s" % (key,val))
+        
+KeyVari(Start ="Starting", Middle="Middle", End="Ending")
+In [ ]:
+### docstring function 
+## this is used to describe functionality of function
+
+def DocString(param):
+    """This is how doc string function works"""
+    
+    print("This is inside the function")
+    
+
+DocString("parameter")
+print(DocString.__doc__)
+In [ ]:
+## Returning Function
+
+def Returning(val):
+    return val*val
+
+Returning(5)
+Returning(10)
+In [ ]:
+### Multiple Returning 
+
+def multi(val):
+    return val*val, val**val,val+val
+
+square, power, plus = multi(5)
+print(square, power, plus)
+In [ ]:
+### Reference 
+
+def ref(x):
+    x = [11,22,33]
+#     return x
+    print("Inside ref fun: ", x)
+    
+x = 10 
+print("Before calling: ",x)
+lst = [1,2,3,4,5]
+ref(lst)
+print("After calling: ",x)
+In [ ]:
+### python function within function
+
+def f1(value):
+    print(value)
+    
+    def f2(value):
+        strg = "%d is value of parameter passed to inner function"%(value)
+        print(strg)
+        
+    
+    f2(value)
+    
+f1(100)
+In [ ]:
+### global keyword and global function
 
 
-//lambda with use of reduce
+# this are global variable
+a = 10
+b = 10
 
-1.from functools import reduce
-  f = lambda a,b: a if (a > b) else b
-  reduce(f, [47,11,42,102,13])
-Output:
-102
 
-2.from functools import reduce
- reduce(lambda x, y: x+y, range(1,101))
-Output:
-5050
+def add():
+    c = a+b
+    a = a+b # this will give error 
+    # bcoz we are trying to assign the value to variable of outer scope
+    print("C: ",c)
+    print("A: ",a) 
+    
+    
+add()
 
-3.reduce(lambda x, y: x*y, range(44,50))/reduce(lambda x, y: x*y, range(1,7))
-Output:
-13983816.0
+# ~\AppData\Local\Temp/ipykernel_9276/1639514214.py in <module>
+#      13     print("D: ",d)
+#      14 
+# ---> 15 add()
+
+# ~\AppData\Local\Temp/ipykernel_9276/1639514214.py in add()
+#       8 
+#       9 def add():
+# ---> 10     c = a+b
+#      11     a = a+b
+#      12     print("C: ",c)
+
+# UnboundLocalError: local variable 'a' referenced before assignment
+In [ ]:
+### using global keyword
+
+## global variable says that do not initialize another instance
+## use the global variable and overwrite it 
+
+
+x = 10 
+y = 11
+
+def fun():
+    global x
+    
+    print("Inside Function: ", x)
+    
+    x = x + y
+    
+    print("Inside Function changing value of x:" ,x)
+    
+fun()
+
+print("Outside function value of x: ", x)
+In [20]:
+### nested function global variable
+
+var = 0
+
+## here nonlocal also works same as global but it is used
+## for variable inside the function
+
+def f1():
+    global var
+    var = 100
+    var1 = 200
+    
+    print("inside f1: ",var)
+    
+    def nested():
+        global var
+        nonlocal var1 
+        print("var1: ",var1)
+        print("inside nested fun: ", var)
+        var = var + var1
+        print("after increment %d:" % var)
+        
+    
+    nested()
+    
+f1()
+inside f1:  100
+var1:  200
+inside nested fun:  100
+after increment 300:

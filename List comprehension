@@ -1,0 +1,18 @@
+Write a program to demonstrate List in Python and 
+h_letters = []
+
+for letter in 'human':
+    h_letters.append(letter)
+// string Using List Comprehension
+print(h_letters)
+
+h_letters = [ letter for letter in 'human' ]
+print( h_letters)
+// Lambda functions
+letters = list(map(lambda x: x, 'human'))
+print(letters)
+// Using if with List Comprehension
+number_list = [ x for x in range(20) if x % 2 == 0]
+print(number_list)
+
+

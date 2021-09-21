@@ -1,0 +1,53 @@
+4) Write at least 10-15  problem codes   to demonstrate usage of Lambda functions in Python (with use of map, filter , reduce etc.)
+sum = lambda x, y : x + y
+sum(3,4)
+output:-
+7
+//lambda with use of map.
+1.	a = [1, 2, 3, 4]
+      b = [17, 12, 11, 10]
+      c = [-1, -4, 5, 9] 
+          list(map(lambda x, y, z : x+y+z, a, b, c))
+Output:
+[17, 10, 19, 23]
+2.	list(map(lambda x, y : x+y, a, b))
+Output:
+[18, 14, 14, 14]
+
+3.	list(map(lambda x, y, z : 2.5*x + 2*y - z, a, b, c))
+Output:
+[37.5, 33.0, 24.5, 21.0]
+//lambda with use of filter.
+1.	Fibonacci = [0,1,1,2,3,5,8,13,21,34,55]
+     Odd_numbers = list(filter(lambda x: x % 2, fibonacci))
+     Print(odd_numbers)
+Output:-
+[1, 1, 3, 5, 13, 21, 55]
+2.even_numbers = list(filter(lambda x: x % 2 == 0, fibonacci))
+ print(even_numbers)
+
+output:-
+[0, 2, 8, 34]
+3.even_numbers = list(filter(lambda x: x % 2 -1, fibonacci))
+ print(even_numbers)
+
+output:-
+[0, 2, 8,34]
+
+
+//lambda with use of reduce
+
+1.from functools import reduce
+  f = lambda a,b: a if (a > b) else b
+  reduce(f, [47,11,42,102,13])
+Output:
+102
+
+2.from functools import reduce
+ reduce(lambda x, y: x+y, range(1,101))
+Output:
+5050
+
+3.reduce(lambda x, y: x*y, range(44,50))/reduce(lambda x, y: x*y, range(1,7))
+Output:
+13983816.0

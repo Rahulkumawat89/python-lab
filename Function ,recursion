@@ -1,0 +1,41 @@
+Write a program to demonstrate usage of  functions , passing list as argument , recursion, local and global scope using  in Python
+
+x = "global"
+
+def foo():
+    print("x inside:", x)
+
+
+foo()
+print("x outside:", x)
+
+Output:-
+x inside: global
+x outside: global
+
+
+
+def foo():
+    y = "local"
+    print(y)
+
+foo()
+
+Output:-
+Local
+
+x = "global "
+
+def foo():
+    global x
+    y = "local"
+    x = x * 2
+    print(x)
+    print(y)
+
+foo()
+
+Output:-
+
+global global 
+local

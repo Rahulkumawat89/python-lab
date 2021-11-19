@@ -1,0 +1,1047 @@
+'''A student will not be allowed to sit in exam if his/her attendence is less than 80%.
+Take following input from user
+Total Number of classes held
+Total Number of classes attended. And print percentage of class attended. Is student is allowed to sit in exam or not.'''
+
+tclass=float(input("Enter the total number of classes held "))
+aclass=float(input("Enter the total number of classes attended "))
+per=(aclass/tclass)*100
+if per < 80.0:
+  print("Attendance Per : %.2f and the person is not allowed to sit in exams" % per)
+else:
+  print("Attendance Per : %.2f and the person is allowed to sit in exams" % per)
+Enter the total number of classes held 55
+Enter the total number of classes attended 48
+Attendance Per : 87.27 and the person is allowed to sit in exams
+
+
+In [18]:
+'''Calculate income tax for the given income by adhering to the below rules
+Taxable Income        Rate (in %)
+First Rs.10,0000         0
+Next Rs. 10,0000       10
+The remaining           20'''
+inc=int(input("Enter your income "))
+if inc<100000:
+  print("Income Tax : 0")
+elif inc>100000 and inc<200000:
+  print("Income Tax :",inc*(0.1))
+else:
+  print("Income Tax :",inc*(0.2))
+Enter your income 553210
+Income Tax : 110642.0
+
+
+In [20]:
+'''Program to find digital sum of a given Number
+   ex: n=123  Digital sum----->1+2+3=6'''
+st=input("Enter the number ")
+sum=0
+for s in st:
+  sum=int(s)+sum
+print(sum)
+Enter the number 5487
+24
+
+
+In [24]:
+'''Program to find the digital product of a given number
+   ex: n=43   Digital product ----->4*3=12'''
+st=input("Enter the number ")
+sum=1
+for s in st:
+  sum=int(s)*sum
+print(sum)
+Enter the number 1234
+24
+
+In [26]:
+#Find the sum of the series 3 +33 + 333 + 3333 + .. n terms
+n=int(input("Enter the value of n "))
+p=3
+sum=0
+for i in range(n):
+  sum=p+sum
+  p=(p*10)+3
+print(sum)
+Enter the value of n 4
+3702
+
+In [30]:
+'''Print the following pattern
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+*'''
+n=int(input("Enter the numbers of rows "))
+for i in range(1,(n*2)):
+  if i<=(n):
+    print("* "*i)
+  else:
+    print("* "*((n*2)-i))
+Enter the numbers of rows 5
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+#Program to reverse a given Number.    ex: n=123   Reversed no is 321
+num=int(input("Enter the number to be reversed "))
+rev=0
+while num>0:
+  rev=(rev*10)+(num%10)
+  num=num//10
+print("Reverse",rev)
+Enter the number to be reversed 7896
+Reverse 6987
+In [6]:
+#Program to check whether a given number is a palindrome or not
+num=int(input("Enter the number to be checked "))
+temp=num
+rev=0
+while num>0:
+  rev=(rev*10)+(num%10)
+  num=num//10
+if temp==rev:
+  print("The entered number is palindrome.")
+else:
+  print("The entered number is not palindrome.")
+Enter the number to be checked 12321
+The entered number is palindrome.
+In [13]:
+#Program to check whether a given number is an Armstrong number or not.
+num=int(input("Enter the number to be checked "))
+sum=0
+for i in str(num):
+  sum=sum+((int(i))**3)
+if num==sum:
+  print("The entered number is Armstrong number.")
+else:
+  print("The entered number is not Armstrong number.")
+Enter the number to be checked 52
+The entered number is not Armstrong number.
+In [17]:
+#Program to find factorial of a given number.
+num=int(input("Enter a number "))
+fac=1
+while num>1:
+  fac=fac*num
+  num-=1
+print("Factorial :",fac)
+Enter a number 50
+Factorial : 30414093201713378043612608166064768844377641568960512000000000000
+In [22]:
+#Program to find whether a given number is a strong number or not.
+#  e.g. n=145   1!+4!+5!==145
+
+def fact(n):
+  fac=1
+  while n>1:
+    fac=fac*n
+    n-=1
+  return fac
+
+num=int(input("Enter the number to be checked "))
+sum=0
+for i in str(num):
+  sum=sum+fact(int(i))
+if sum==num:
+  print("The entered number is strong number.")
+else:
+  print("The entered number is not a strong number.")
+Enter the number to be checked 40585
+The entered number is strong number.
+In [30]:
+#Program to find whether a given number is a unique number. 
+#For example, 20, 56, 9863, 145, etc. are the unique numbers while 33, 121, 900, 1010, etc. are not unique numbers
+num=int(input("Enter a number "))
+num1=num
+num2=num
+count=0
+while(num1>0):
+  r1=num1%10
+  while(num2>0):
+    r2=num2%10
+    if r1==r2:
+      count+=1
+    num2=num2//10
+  num1=num1//10
+if count==1:
+  print("The entered number is unique.")
+else:
+  print("The entered number is not unique.")
+Enter a number 121
+The entered number is not unique.
+In [35]:
+#Program to find whether a given number is a perfect number or not.
+num=int(input("Enter the number "))
+sum=0
+for i in range(1,num):
+  if num%i==0:
+    sum=sum+i
+if sum==num:
+  print("The entered number is perfect number.")
+else:
+  print("The entered number is not a perfect number.")
+Enter the number 496
+The entered number is perfect number.
+In [46]:
+#Program to find whether a given number is a prime number or not.
+num=int(input("Enter a number "))
+flag=0
+for i in range(2,num):
+  if num%i==0:
+    print("The entered number is not a prime number.")
+    flag=1
+    break
+if flag==0:
+  print("The entered number is a prime number.")
+Enter a number 8
+The entered number is not a prime number.
+In [49]:
+'''Print downward Half-Pyramid Pattern with Star (asterisk)
+* * * * *  
+* * * *  
+* * *  
+* *  
+*'''
+n=int(input("Enter the number of rows "))
+for i in range(n,0,-1):
+  print('* '*i)
+Enter the number of rows 5
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+In [51]:
+'''Print  following pattern: 
+1
+22
+333
+4444
+55555
+666666
+7777777
+88888888
+999999999
+'''
+n=int(input("Enter the number of rows "))
+for i in range(1,n+1):
+  print(str(i)*i)
+Enter the number of rows 9
+1
+22
+333
+4444
+55555
+666666
+7777777
+88888888
+999999999
+In [53]:
+'''Print  following pattern: 
+1
+12
+123
+1234
+12345
+123456
+1234567
+12345678
+123456789
+'''
+n=int(input("Enter the number of rows "))
+for i in range(1,n+1):
+  for j in range(1,i+1):
+    print(j,end='')
+  print("")
+Enter the number of rows 9
+1
+12
+123
+1234
+12345
+123456
+1234567
+12345678
+123456789
+In [58]:
+'''Print following pattern: 
+A
+BB
+CCC
+DDDD
+EEEEE
+FFFFFF
+GGGGGGG
+FFFFFFFF
+'''
+n=int(input("Enter the number of rows "))
+for i in range(1,n+1):
+  print(chr(64+i)*i)
+Enter the number of rows 8
+A
+BB
+CCC
+DDDD
+EEEEE
+FFFFFF
+GGGGGGG
+HHHHHHHH
+In [85]:
+#Write a Python program to calculate the length of a given string.
+
+s1=input("Enter the string ")
+ln=0
+for i in s1:
+  ln+=1;
+print("Lenght :",ln)
+print(len(s1))
+Enter the string Python Work
+Lenght : 11
+11
+In [75]:
+#Write a Python program to get a single string from two given strings, separated by a space and swap the first characters of each string.
+# Sample String : 'abc', 'xyz' 
+# Expected Result : 'xbc ayz'
+a,b=input("Enter the string ").split(", ")
+temp=a[0:1]
+ 
+a=a.replace(a[0:1],b[0:1])
+ 
+b=b.replace(b[0:1],temp)
+print(a,b)
+Enter the string abc, xyz
+xbc ayz
+In [91]:
+'''Write a Python program to add 'polis' at the end of a given string (length should be at least 3).
+  If the given string already ends with 'polis' then add 'polisCS' instead.
+  If the string length of the given string is less than 3, leave it unchanged. 
+ Sample String : 'abc'
+ Expected Result : 'abcpolisCS' 
+ Sample String : 'Acropolis'
+ Expected Result : 'AcropolisCS'''
+
+s=input("Enter a string ")
+length=len(s)
+if length>2:
+  if s[-5:]=='polis':
+      s+='CS'
+  else:
+      s+='polis'
+print(s)
+Enter a string AcropolisCS
+AcropolisCSpolis
+In [94]:
+'''Write a Python program to count the number of characters (character frequency) in a string. 
+ Sample String : google.com'
+ Expected Result : {'o': 3, 'g': 2, '.': 1, 'e': 1, 'l': 1, 'm': 1, 'c': 1}'''
+s=input("Enter a string ")
+d1={}
+for n in s:
+  k=d1.keys()
+  if n in k:
+    d1[n]+=1
+  else:
+    d1[n]=1
+print(d1)
+Enter a string google.com
+{'g': 2, 'o': 3, 'l': 1, 'e': 1, '.': 1, 'c': 1, 'm': 1}
+In [96]:
+#Write a Python program to change a given string to a new string where the second and last chars have been exchanged.
+s=input("Enter a string ")
+rs=s[-1:] + s[1:-1] + s[:1]
+print(rs)
+Enter a string Kamal
+lamaK
+In [97]:
+#Write a Python program to remove the characters which have even index values of a given string.
+s=input("Enter a string ")
+rs=""
+for i in range(len(s)):
+  if i%2!=0:
+      rs=rs+s[i]
+print(rs)
+Enter a string abcdef
+bdf
+In [98]:
+#Write a Python program that takes input from the user and displays that input back in upper and lower cases.
+s=input("Enter the string ")
+print(s.upper())
+print(s.lower())
+Enter the string AcroCSIT
+ACROCSIT
+Acrocsit
+
+#Display float number with 2 decimal places using print()
+f1=float(input("Enter the float number "))
+fs="{:.2f}".format(f1)
+print(fs)
+Enter the float number 3.414
+3.41
+In [ ]:
+#Takes two integer numbers and  return their product.
+f1=int(input("Enter the first number "))
+f2=int(input("Enter the second number "))
+print("The product =",f1*f2)
+Enter the first number 5
+Enter the second number 12
+The product = 60
+In [ ]:
+#Write a Python program to get the volume of a sphere with radius 10.
+pi=3.1415926535897931
+r=10
+print("Volume of sphere ",((4/3)*pi*r*r*r))
+
+"""r=float(input("Enter the radius of sphere "))
+pi=3.1415926535897931
+vol=(4.0/3.0)*pi*r*r*r
+print("Volume =",vol)"""
+Volume of sphere : 4188.790204786391
+In [ ]:
+#Accept two numbers from the user and multiply them together.
+f1=int(input("Enter the first number "))
+f2=int(input("Enter the second number "))
+f3=f1*f2
+print("The product =",f3)
+Enter the first number 10
+Enter the second number 5
+The product = 50
+In [ ]:
+#Write a Python program that accepts an integer (a) and computes the value of a+aa+aaa.
+f1=int(input("Enter the number "))
+f2=input("Enter the digit ")
+sum=0
+for i in range(1,f1+1):
+  sum=sum+int(str(f2*i))
+print(sum)
+Enter the number 6
+Enter the digit 3
+370368
+In [ ]:
+#Write a Python program to calculate the length of a string
+f1=input("Enter String ")
+len=0
+for i in f1:
+      len=len+1
+print("Length of the string is =",len)
+Enter String kunal akhote
+Length of the string is = 12
+In [ ]:
+#Write a Python program to parse a string to Float & Integer
+f1="913.457"
+print(int(float(f1)))
+print(float(f1))
+913
+913.457
+In [ ]:
+#Given two integer numbers return their sum. If the sum is greater than 100, then return their product.
+f1=int(input("Enter the first number "))
+f2=int(input("Enter the second number "))
+f3=f1+f2
+if f3>100:
+  print("Product :",f1*f2)
+else:
+  print("Sum :",f3)
+Enter the first number 123
+Enter the second number 12
+Product : 1476
+In [ ]:
+#Write a Python program to calculate the sum of three given numbers, if the values are not - equal then return four times of their sum
+f1=int(input("Enter the first number "))
+f2=int(input("Enter the second number "))
+f3=int(input("Enter the third number "))
+sum=f1+f2+f3
+if f1==f2==f3:
+      sum=sum *3
+print(sum)
+Enter the first number 4
+Enter the second number 4
+Enter the third number 4
+36
+In [ ]:
+#A shop will give discount of 50% if the cost of purchased quantity is more than 10000. 
+#Ask user for quantity suppose, one unit will cost 100. Judge and print total cost for user.
+quan=int(input("Enter the quantity "))
+tcost=quan*100
+if tcost>10000:
+  tcost=tcost-(0.5*tcost)
+print(tcost)
+Enter the quantity 620
+31000.0
+In [4]:
+#To check whether a number is divisible by 8 and 12 or not.
+f1=int(input("Enter the number "))
+if f1%8==0 and f1%12==0:
+  print(f1,"is divisible by 8 and 12.")
+else:
+  print(f1,"is not divisible by 8 and 12.")
+Enter the number 128
+128 is not divisible by 8 and 12.
+In [6]:
+#To check whether a given number is even or odd.
+f1=int(input("Enter a number "))
+if f1%2==0:
+  print(f1,"is even number.")
+else:
+  print(f1,"is odd number")
+Enter a number 10
+10 is even number.
+In [9]:
+"""Write a program to input marks of five subjects Physics, Chemistry, Biology, 
+Mathematics and Computer. Calculate percentage and grade according to following:
+Percentage >= 90% : Grade A
+Percentage >= 80% : Grade B
+Percentage >= 70% : Grade C
+Percentage >= 60% : Grade D
+Percentage >= 40% : Grade E
+Percentage < 40% :  Grade F"""
+print("ENTER THE MARKS OF FOLLOWING SUBJECT(OUT of 100)")
+phy=int(input("Physics:"))
+chem=int(input("Chemistry:"))
+bio=int(input("Biology:"))
+math=int(input("Mathematics:"))
+com=int(input("Computer:"))
+tot=phy+chem+bio+math+com
+per=(tot/500)*100
+if per>=90:
+  print("Your grade is A")
+elif per>=80:
+  print("Your grade is B")
+elif per>=70:
+  print("Your grade is C")
+elif per>=60:
+  print("Your grade is D")
+elif per>=40:
+  print("Your grade is E")
+else:
+  print("Your grade is F")
+ENTER THE MARKS OF FOLLOWING SUBJECT(OUT of 100)
+Physics:92
+Chemistry:91
+Biology:90
+Mathematics:93
+Computer:87
+Your grade is A
+In [14]:
+#Take input of age of 3 people by user and determine oldest and youngest among them.
+age1=int(input("Enter the age of user 1 "))
+age2=int(input("Enter the age of user 2 "))
+age3=int(input("Enter the age of user 3 "))
+if age1>age2 and age1>age3:
+  if age2>age3:
+    print("User 1 is oldest and User 3 is youngest")
+  else:
+    print("User 1 is oldest and User 2 is youngest")
+elif age2>age3 and age2>age1:
+  if age1>age3:
+    print("User 2 is oldest and User 3 is youngest")
+  else:
+    print("User 2 is oldest and User 1 is youngest")
+else:
+  if age1>age2:
+    print("User 3 is oldest and User 2 is youngest")
+  else:
+    print("User 3 is oldest and User 1 is youngest")
+Enter the age of user 1 1
+Enter the age of user 2 9
+Enter the age of user 3 15
+User 3 is oldest and User 1 is youngest
+In [16]:
+'''Write a program to input electricity unit charges and calculate total electricity bill according to the given condition:
+For first 50 units Rs. 0.50/unit
+For next 100 units Rs. 0.75/unit
+For next 100 units Rs. 1.20/unit
+For unit above 250 Rs. 1.50/unit
+An additional surcharge of 20% is added to the bill'''
+unit=int(input("Enter the units "))
+tot=0.0
+if unit<=50:
+  tot=0.50*unit
+elif unit>50 and unit<=150:
+  tot=0.75*unit
+elif unit>150 and unit<=250:
+  tot=1.20*unit
+elif unit>250:
+  tot=1.50*unit
+ctot=tot*(20/100)+tot
+print("Total bill :",ctot)
+Enter the units 51
+Total bill : 45.9
+
+#Write a Python program to count occurrences of a substring in a string.
+s=input("Enter the string ")
+subs=input("Enter the substring to be counted ")
+res=s.count(subs)
+print(res)
+Enter the string the school is good but school is far
+Enter the substring to be counted school
+
+
+2
+In [ ]:
+#Write a Python program to lowercase first n characters in a string.
+s=input("Enter the string ")
+n=int(input("Enter the value of n "))
+print(s[:n].lower()+s[n:])
+Enter the string HEEman
+Enter the value of n 2
+heEman
+
+
+In [ ]:
+#Write a Python program to remove spaces from a given string.
+s=input("Enter the string ")
+print(s.replace(" ",""))
+Enter the string P Y T H      O N
+PYTHON
+In [ ]:
+#Write a Python program to move spaces to the front of a given string.
+s=input("Enter the string ")
+noSpaces_char=[ch for ch in s if ch!=' ']
+spaces_char=len(s)-len(noSpaces_char)
+res=' '*spaces_char
+res=res+''.join(noSpaces_char)
+print(res)
+Enter the string P  Y   T         H        O  N
+ 
+                       PYTHON
+In [ ]:
+#Write a Python program to find the maximum occurring character in a given string.
+s=input("Enter the string ")
+dic={}
+for i in s:
+    if i in dic:
+        dic[i]+=1
+    else:
+        dic[i]=1
+res=max(dic, key = dic.get)
+print(res)
+Enter the string invited in the intership
+i
+
+In [ ]:
+#Write a Python program to capitalize first and last letters of each word of a given string.
+s=input("Enter the string ")
+s=res=s.title()
+res=""
+for word in s.split():
+  res+=word[:-1]+word[-1].upper()+" "
+print(res[:-1])
+Enter the string cdc Acropolis
+CdC AcropoliS
+
+
+In [ ]:
+#Write a Python program to compute sum of digits of a given string.
+s=input("Enter the string ")
+sum=0
+for x in s:
+  if x.isdigit()==True:
+    z=int(x)
+    sum=sum+z
+print(sum)
+Enter the string CSIT 504-507
+
+
+In [21]:
+#Write a Python function that takes a list of words and returns the length of the longest one.
+s=list(input("Enter the string ").split(" , "))
+l=[]
+for n in s:
+  l.append((len(n), n))
+  l.sort()
+print(l[-1][1],l[-1][0])
+Enter the string CDC , ACROPOLIS , CSIT
+ACROPOLIS 9
+In [ ]:
+#Write a function x(n) for computing an element in the sequence xn=n^2+1. Call the function for n=4 and write out the result.
+def x(n):
+  return(n**2 + 1)
+num=int(input("Enter the value of n "))
+print(x(num))
+Enter the value of n 4
+
+
+17
+In [ ]:
+'''Take the following Python code that stores a string: ‘str = 'Y-tatata-acropolis: 0.8475'. 
+Use find and string slicing to extract the portion of the string after the colon character and 
+then use the float function to convert the extracted string into a floating point number.'''
+string = 'Y-tatata-acropolis: 0.8475'
+col_pos = string.find(':')                  # Finds the colon character
+number = string[col_pos + 1:]                # Extracts portion after colon
+confidence = float(number)                  # Converts to floating point number
+print(confidence)
+0.8475
+
+
+In []:
+#Write a function that returns the middle value among three integers. 
+#(Hint: make use of min() and max()). Write code to test this function with different inputs.
+def mid(a,b,c) :
+	if a>b:
+		if (b>c):
+			return b
+		elif (a>c):
+			return c
+		else :
+			return a
+	else:
+		if (a>c):
+			return a
+		elif (b>c):
+			return c
+		else :
+			return b
+
+a=int(input("Enter 1st Number "))
+b=int(input("Enter 2nd Number "))
+c=int(input("Enter 3rd Number "))
+print(mid(a,b,c))
+Enter 1st Number 4
+Enter 2nd Number 0
+Enter 3rd Number 10
+4
+
+
+In [1]:
+1'''Write a function that computes the area of a rectangle. 
+Then, write a second function that calls this function three times to compute the surface area of a rectangular solid.'''
+def secondfun():
+  for i in range(3):
+    print(area(i+1,i+3))
+
+def area(h,w):
+  area=h*w
+  return area
+height=float(input("Enter the height of rectangle "))
+width=float(input("Enter the width of rectangle "))
+print(area(height,width))
+
+secondfun()
+Enter the height of rectangle 5
+Enter the width of rectangle 12
+60.0
+3
+8
+15
+
+
+In [2]:
+'''Create an outer function that will accept three parameters, a, b and c. Create an inner function 
+inside an outer function that will calculate the addition of a, b and c. 
+At last, an outer function will add 5 into addition and return it '''
+def num1(x,y,z):
+  def num2(a,b,c):
+    return a+b+c
+  outer=num2(x,y,z)+5
+  return outer
+
+a=int(input("Enter 1st Number "))
+b=int(input("Enter 2nd Number "))
+c=int(input("Enter 3rd Number "))
+print(num1(a,b,c))
+Enter 1st Number 5
+Enter 2nd Number 4
+Enter 3rd Number 5
+19
+
+
+In [3]:
+#Write a program to create a recursive function to calculate the product of numbers from 10 to 100.
+def fun(n):
+   if n==10:
+       return n
+   else:
+       return n*fun(n-1)
+
+print("The product of numbers from 10 to 100 : " "is", fun(100))
+The product of numbers from 10 to 100 : is 257182031095525112107857249934597388918419224714455526533820998388496472644482792132224051962512451185663850090463028434334174412800000000000000000000000
+In [4]:
+#Write a Python function to calculate the factorial of a number (a non-negative integer). The function accepts the number as an argument.
+def fact(n):
+    if n==0:
+        return 1
+    else:
+        return n*fact(n-1)
+n=int(input("Enter a number "))
+print(fact(n))
+Enter a number 5
+120
+
+
+In [6]:
+#Write a Python function to display all the multiples of  7 & 9 within the range 100 to 500.
+l1=[]
+for x in range(100, 501):
+    if(x%7==0) and (x%9==0):
+        l1.append(str(x))
+print (','.join(l1))
+126,189,252,315,378,441
+
+
+In [9]:
+#Write a Python function  to check whether the given integer is a prime number or not.
+num=int(input("Enter a number "))
+flag=False
+def prime(n):
+  flag1=False
+  if n>1:
+    for i in range(2,n):
+        if (n%i)==0:
+            flag1=True
+            break
+  return flag1
+
+flag=prime(num)
+if flag:
+    print(num, "is not a prime number")
+else:
+    print(num, "is a prime number")
+Enter a number 9
+9 is not a prime numbe
+
+In [12]:
+#Write a Python function that checks whether a passed interger is armstrong or not.
+n=int(input("Enter a number "))
+def armstrong(num):
+  sum=0
+  temp=num
+  while temp>0:
+    digit=temp%10
+    sum+=digit**3
+    temp//=10
+  return sum
+
+summ=armstrong(n)
+if n == summ:
+   print(n,"is an Armstrong number")
+else:
+   print(n,"is not an Armstrong number")
+Enter a number 407
+407 is an Armstrong number
+
+
+In [13]:
+#Program to return a function from another function.
+def B():
+	print("Inside the method B.")
+def A():
+	print("Inside the method A.")
+	return B
+
+returned_function = A()
+
+returned_function()
+Inside the method A.
+Inside the method B.
+
+
+In [16]:
+'''First, def a function, start_process, that takes one argument p. Then, if the start_process function receives an p equal to "Yes", 
+it should return "Start Process" Alternatively, elif p is equal to "No", then the function should return "Start Process Aborted". 
+Finally, if start_process gets anything other than those inputs, the function should return "Sorry for the input".'''
+def start_process(p):
+  if p=="Yes":
+    return "Start Process"
+  elif p=="No":
+    return "Start Process Aborted"
+  else:
+    return "Sorry for the input"
+
+command= input("Enter a command: ")
+print(start_process(command))
+Enter a command: No
+Start Process Aborted
+
+
+In [21]:
+'''First, def a function called calculate_distance, with one argument (choose any argument name you like). 
+If the type of the argument is either int or float, the function should return the absolute value of the function input. 
+Otherwise, the function should return "No value". Check if it works calling the function with  9.6 and "what?".'''
+def calculate_distance(argument):
+  if type(argument)==int or type(argument)==float:
+      print(abs(argument))
+  else:
+      print("No value")
+
+calculate_distance(9.6)
+calculate_distance("what?")
+9.6
+No value
+
+
+In [23]:
+#Python program to display the sum of input (n) numbers using a list.
+l1=list(input("Enter the list ").split(" , "))
+sum=0
+for i in range(0, len(l1)):
+    sum=sum+int(l1[i])
+ 
+print("Sum of all elements is",sum)
+Enter the list 5 , 10 , 20 , 30 , 80
+Sum of all elements is 145
+
+
+In [29]:
+#Python program to insert a number to given position in a list.
+l1=list(input("Enter the list ").split(" , "))
+k=int(input("Enter the position "))
+x=input("Enter the element to be inserted ")
+def fun1(x,l1,pos):
+    return l1[:pos-1]+[x]+l1[pos-1:]
+
+res=fun1(x,l1,k)
+print(res)
+Enter the list acropolis , cdc , edc
+Enter the position 2
+Enter the element to be inserted csit
+['acropolis', 'csit', 'cdc', 'edc']
+
+
+In [30]:
+'''Write the program that prompts the user for a list of numbers and prints out the maximum and 
+minimum of the numbers at the end when the user enters “done”. Write the program to store the numbers 
+the user enters in a list and use the max() and min() functions to compute the maximum and minimum numbers after the loop completes.'''
+my_list=[]                     
+while True:
+    number=0.0
+    input_number=input('Enter a number: ')
+    if input_number=='done':
+        break
+    try:
+        number=float(input_number)
+    except ValueError:
+        print('Invalid input')
+        quit()
+    my_list.append(number)
+if my_list:
+    print('Maximum: ', max(my_list) or None)
+    print('Minimum: ', min(my_list) or None)
+Enter a number: 5
+Enter a number: 15
+Enter a number: 25
+Enter a number: 30
+Enter a number: done
+Maximum:  30.0
+Minimum:  5.0
+
+
+In [31]:
+#Write another program that prompts for a list of numbers as above and at the end prints out both the maximum and minimum of the numbers.
+my_list=[]                     
+while True:
+    number=0.0
+    input_number=input('Enter a number ')
+    if input_number=='done':
+        break
+    try:
+        number = float(input_number)
+    except ValueError:
+        print('Invalid input')
+        quit()
+
+    my_list.append(number)
+
+if my_list:
+    print('Maximum: ', max(my_list) or None)
+    print('Minimum: ', min(my_list) or None)
+Enter a number 3
+Enter a number 4
+Enter a number 9
+Enter a number 1
+Enter a number done
+Maximum:  9.0
+Minimum:  1.0
+
+
+In [32]:
+#Python program to delete an element from a list by index which is given by the user.
+l1=list(input("Enter the list ").split(" , "))
+k=int(input("Enter the index from which the element to be deleted "))
+l1.pop(k)
+print(l1)
+Enter the list acropolis , csit , edc , cdc
+Enter the index from which the element to be deleted 3
+['acropolis', 'csit', 'edc']
+
+
+
+In [33]:
+#Write a Python program to print a specified list after removing the 1st, 2nd and 5th elements.
+color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+color = [x for (i,x) in enumerate(color) if i not in (1,2,5)]
+print(color)
+['Red', 'Black', 'Pink']
+
+
+
+In [34]:
+#Write a Python program to generate all sublists of a list.
+from itertools import combinations
+def sub_lists(my_list):
+	subs = []
+	for i in range(0, len(my_list)+1):
+	  temp = [list(x) for x in combinations(my_list, i)]
+	  if len(temp)>0:
+	    subs.extend(temp)
+	return subs
+
+
+l1 = [10, 20, 30, 40]
+l2 = ['X', 'Y', 'Z']
+print("Original list:")
+print(l1)
+print("S")
+print(sub_lists(l1))
+print("Sublists of the said list:")
+print(sub_lists(l1))
+print("\nOriginal list:")
+print(l2)
+print("Sublists of the said list:")
+print(sub_lists(l2))
+Original list:
+[10, 20, 30, 40]
+S
+[[], [10], [20], [30], [40], [10, 20], [10, 30], [10, 40], [20, 30], [20, 40], [30, 40], [10, 20, 30], [10, 20, 40], [10, 30, 40], [20, 30, 40], [10, 20, 30, 40]]
+Sublists of the said list:
+[[], [10], [20], [30], [40], [10, 20], [10, 30], [10, 40], [20, 30], [20, 40], [30, 40], [10, 20, 30], [10, 20, 40], [10, 30, 40], [20, 30, 40], [10, 20, 30, 40]]
+
+Original list:
+['X', 'Y', 'Z']
+Sublists of the said list:
+[[], ['X'], ['Y'], ['Z'], ['X', 'Y'], ['X', 'Z'], ['Y', 'Z'], ['X', 'Y', 'Z']]
+
+
+
+
+In [35]:
+#Write a Python program to find all the values in a list are greater than a given number.
+list1 = [220, 330, 500]
+list2 = [12, 17, 21]
+print(all(x >= 200 for x in list1))
+print(all(x >= 15 for x in list2))
+True
+False
+
+
+
+In [36]:
+#Python program to find the even numbers in a List.
+list1 = [10, 21, 4, 45, 66, 93]
+for num in list1:
+    if num % 2 == 0:
+        print(num, end=" ")
+10 4 66 
+

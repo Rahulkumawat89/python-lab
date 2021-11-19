@@ -1,0 +1,143 @@
+my_set={1,2,3}
+In [2]:
+print(my_set)
+{1, 2, 3}
+In [3]:
+my_set={5.654,"Python",(1,2,3)}#Set can have only float int tuple string values as set's elements are immutable 
+#but set itself is mutable
+In [4]:
+print(my_set)
+{5.654, (1, 2, 3), 'Python'}
+my_set=([1,2,3]) #Here {} is not used so that why it is considered as list
+print(my_set)
+type(my_set)
+[1, 2, 3]
+Out[7]:
+list
+In [8]:
+a={} #here empty {} will define dictionary to define set we have to use set function
+print(a)
+type(a)
+{}
+Out[8]:
+dict
+In [9]:
+a=set()
+print(a)
+type(a)
+set()
+Out[9]:
+set
+In [11]:
+my=set([1,2,3]) #Here it is accepting list but treating the each element of list as the element of set
+print(my)
+type(my)
+{1, 2, 3}
+Out[11]:
+set
+In [13]:
+my=set()
+my.add(2)
+my
+Out[13]:
+{2}
+In [14]:
+my.add(2) #set does not have duplicate value
+my
+Out[14]:
+{2}
+In [15]:
+my.update([1,2,3])
+my
+Out[15]:
+{1, 2, 3}
+In [16]:
+my.update({1,2,3}, {1,6,8})
+my #update will update more than 1 element at time and add will add 1 element in set
+Out[16]:
+{1, 2, 3, 6, 8}
+my.discard(3)
+my
+Out[19]:
+{1, 2, 6, 8}
+In [20]:
+my.pop()
+Out[20]:
+1
+In [24]:
+my=set("HelloWorld")
+my
+Out[24]:
+{'H', 'W', 'd', 'e', 'l', 'o', 'r'}
+In [26]:
+my.clear()
+print(my)
+set()
+In [27]:
+A={1,2,3,4,5}
+B={4,5,6,7,8}
+print(A|B) # | is for union
+{1, 2, 3, 4, 5, 6, 7, 8}
+In [28]:
+A.union(B)
+Out[28]:
+{1, 2, 3, 4, 5, 6, 7, 8}
+In [30]:
+print(A)
+print(B)
+{1, 2, 3, 4, 5}
+{4, 5, 6, 7, 8}
+In [31]:
+print(A&B) # & is for intersection
+{4, 5}
+In [32]:
+A.intersection(B)
+Out[32]:
+{4, 5}
+In [33]:
+print(A-B) # - is for difference
+{1, 2, 3}
+In [34]:
+A.difference(B)
+Out[34]:
+{1, 2, 3}
+In [35]:
+print(A^B) # ^ is for symmetric difference
+{1, 2, 3, 6, 7, 8}
+In [36]:
+A.symmetric_difference(B)
+Out[36]:
+{1, 2, 3, 6, 7, 8}
+In [37]:
+print(1 in A) #This shows that sets are iterable
+True
+In [39]:
+my=set("Kunal")
+for letter in my:
+  print(letter)
+u
+a
+l
+n
+K
+In [40]:
+my=set("Acropolis")
+for letter in my:
+  print(letter)
+p
+c
+r
+l
+o
+i
+A
+s
+In [41]:
+my=set("banana")
+for letter in my:
+  print(letter)
+a
+b
+n
+
+
